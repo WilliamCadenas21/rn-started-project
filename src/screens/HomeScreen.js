@@ -24,6 +24,12 @@ const HomeScreen = (props) => {
         }}
         title="Go to Screen demo"
       />
+      <Button
+        onPress={() => {
+          props.navigation.navigate("Counter");
+        }}
+        title="Go to Counter demo"
+      />
     </View>
   );
 };

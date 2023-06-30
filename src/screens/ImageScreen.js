@@ -6,9 +6,9 @@ const ImageScreen = () => {
 
   return (
     <>
-      <ImageDetail title="forest" imageSource={require('../../assets/forest.jpg')}/>
-      <ImageDetail title="beach" imageSource={require('../../assets/beach.jpg')}/>
-      <ImageDetail title="mountain" imageSource={require('../../assets/mountain.jpg')}/>
+      <ImageDetail title="Forest" imageSource={require('../../assets/forest.jpg')} score={5}/>
+      <ImageDetail title="Beach" imageSource={require('../../assets/beach.jpg')} score={5}/>
+      <ImageDetail title="Mountain" imageSource={require('../../assets/mountain.jpg')} score={5}/>
     </>
   );
 };
