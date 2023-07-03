@@ -11,12 +11,11 @@ const INITIAL_STATE = {
 };
 
 const reducerHandler = (state = INITIAL_STATE, { type, payload }) => {
-  //action === {colorToChange: string, amount: number}
-  console.log(type)
-  console.log(payload)
-  console.log(state)
-
   
+  // if (!state[type]) return state;
+  if (state[type] + payload.amount > 255 || state[type] + payload.amount < 0)
+    return state;
+
   switch (type) {
     case "red":
       return { ...state, red: state.red + payload.amount };
