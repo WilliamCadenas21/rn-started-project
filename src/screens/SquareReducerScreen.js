@@ -12,7 +12,11 @@ const INITIAL_STATE = {
 
 const reducerHandler = (state = INITIAL_STATE, { type, payload }) => {
   //action === {colorToChange: string, amount: number}
+  console.log(type)
+  console.log(payload)
+  console.log(state)
 
+  
   switch (type) {
     case "red":
       return { ...state, red: state.red + payload.amount };
@@ -45,10 +49,10 @@ const SquareReducerScreen = () => {
       />
       <ColorCounter
         color="Blue"
-        onDecrease={() =>
+        onIncrease={() =>
           dispatch({ type: "blue", payload: { amount: INCREMENT } })
         }
-        onIncrease={() =>
+        onDecrease={() =>
           dispatch({ type: "blue", payload: { amount: -INCREMENT } })
         }
       />
