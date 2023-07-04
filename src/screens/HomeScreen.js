@@ -48,6 +48,18 @@ const HomeScreen = (props) => {
         }}
         title="Go to Square Reducer demo"
       />
+      <Button
+        onPress={() => {
+          props.navigation.navigate("CounterReducer");
+        }}
+        title="Go to Counter Reducer demo"
+      />
+      <Button
+        onPress={() => {
+          props.navigation.navigate("Text");
+        }}
+        title="Go to Text demo"
+      />
     </View>
   );
 };
