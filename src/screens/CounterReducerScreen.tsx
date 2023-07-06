@@ -1,11 +1,16 @@
-import { View, Text, StyleSheet, Button } from "react-native";
+import { View, Text, Button } from "react-native";
 import React, { useReducer } from "react";
 
 const initialState = {
   counter: 0,
 };
 
-const reducerHandler = (state = initialState, { type, payload }) => {
+interface reducerHandlerAction {
+  type: string,
+  payload: number
+}
+
+const reducerHandler = (state = initialState, { type, payload } : reducerHandlerAction) => {
   const { counter } = state
   
   switch (type) {
@@ -42,7 +47,5 @@ const CounterReducerScreen = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({});
 
 export default CounterReducerScreen;

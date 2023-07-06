@@ -14,8 +14,6 @@ const TextScreen = () => {
   );
 };
 
-export default TextScreen;
-
 const styles = StyleSheet.create({
   input: {
     margin: 15,
@@ -23,3 +21,5 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
 });
+
+export default TextScreen;

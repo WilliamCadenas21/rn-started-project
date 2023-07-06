@@ -1,4 +1,3 @@
-// import { StyleSheet } from "react-native";
 import React from "react";
 import ImageDetail from "../components/ImageDetail";
 
@@ -12,8 +11,6 @@ const ImageScreen = () => {
     </>
   );
 };
-
-// const styles = StyleSheet.create({});
 
 export default ImageScreen;
 

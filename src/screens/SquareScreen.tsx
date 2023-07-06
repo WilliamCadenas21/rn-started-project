@@ -1,15 +1,15 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Text, View } from "react-native";
 import React, { useState } from "react";
 import ColorCounter from "../components/ColorCounter";
 
 const INCREMENT = 25;
 
 const SquareScreen = () => {
-  const [red, setRed] = useState(0);
-  const [green, setGreen] = useState(0);
-  const [blue, setBlue] = useState(0);
-
-  const setColor = (color, change) => {
+  const [red, setRed] = useState<number>(0);
+  const [green, setGreen] = useState<number>(0);
+  const [blue, setBlue] = useState<number>(0);
+  
+  const setColor = (color: string, change: number) => {
     //color === 'red', 'green', 'blue'
     //change === +15, -15
 
@@ -27,23 +27,24 @@ const SquareScreen = () => {
         break;
     }
   };
+
   return (
     <View>
       <Text>SquareScreen</Text>
       <ColorCounter
         color="Red"
-        onIncrease={() => setColor("red", INCREMENT)}
-        onDecrease={() => setColor("red", -INCREMENT)}
+        onIncrease={async () => setColor("red", INCREMENT)}
+        onDecrease={async () => setColor("red", -INCREMENT)}
       />
       <ColorCounter
         color="Blue"
-        onDecrease={() => setColor("blue", - INCREMENT)}
-        onIncrease={() => setColor("blue", + INCREMENT)}
+        onDecrease={async () => setColor("blue", -INCREMENT)}
+        onIncrease={async () => setColor("blue", +INCREMENT)}
       />
       <ColorCounter
         color="Green"
-        onIncrease={() => setColor("green", + INCREMENT)}
-        onDecrease={() => setColor("green", - INCREMENT)}
+        onIncrease={async () => setColor("green", +INCREMENT)}
+        onDecrease={async () => setColor("green", -INCREMENT)}
       />
       <View
         style={{
@@ -55,7 +56,5 @@ const SquareScreen = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({});
 
 export default SquareScreen;

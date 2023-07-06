@@ -1,8 +1,15 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Text, View } from "react-native";
 import React, { useReducer } from "react";
 import ColorCounter from "../components/ColorCounter";
 
 const INCREMENT = 25;
+
+interface stateI {
+  red: number,
+  green: number,
+  blue: number,
+  [key: string]: number; // Index signature
+}
 
 const INITIAL_STATE = {
   red: 0,
@@ -10,11 +17,20 @@ const INITIAL_STATE = {
   blue: 0,
 };
 
-const reducerHandler = (state = INITIAL_STATE, { type, payload }) => {
-  const color_type = type.split('_')[1]
+interface reducerHandlerAction {
+  type: string,
+  payload: {
+    amount: number
+  }
+}
+
+const reducerHandler = (state : stateI = INITIAL_STATE, { type, payload } : reducerHandlerAction) => {
+  type ColorType = 'red' | 'green' | 'blue';
+  const colorType : string = type.split('_')[1]
   const { amount } = payload
+  
   // if (!state[type]) return state;
-  if (state[color_type] + amount > 255 || state[color_type] + amount < 0)
+  if (state[colorType as ColorType] + amount > 255 || state[colorType as ColorType] + amount < 0)
     return state;
 
   switch (type) {
@@ -40,29 +56,23 @@ const SquareReducerScreen = () => {
       <Text style={{ fontSize: 20 }}>Square Reducer Screen</Text>
       <ColorCounter
         color="Red"
-        onIncrease={() =>
-          dispatch({ type: "change_red", payload: { amount: INCREMENT } })
+        onIncrease={async () => dispatch({ type: "change_red", payload: { amount: INCREMENT } })
         }
-        onDecrease={() =>
-          dispatch({ type: "change_red", payload: { amount: -INCREMENT } })
+        onDecrease={async () => dispatch({ type: "change_red", payload: { amount: -INCREMENT } })
         }
       />
       <ColorCounter
         color="Blue"
-        onIncrease={() =>
-          dispatch({ type: "change_blue", payload: { amount: INCREMENT } })
+        onIncrease={async () => dispatch({ type: "change_blue", payload: { amount: INCREMENT } })
         }
-        onDecrease={() =>
-          dispatch({ type: "change_blue", payload: { amount: -INCREMENT } })
+        onDecrease={async () => dispatch({ type: "change_blue", payload: { amount: -INCREMENT } })
         }
       />
       <ColorCounter
         color="Green"
-        onIncrease={() =>
-          dispatch({ type: "change_green", payload: { amount: INCREMENT } })
+        onIncrease={async () => dispatch({ type: "change_green", payload: { amount: INCREMENT } })
         }
-        onDecrease={() =>
-          dispatch({ type: "change_green", payload: { amount: -INCREMENT } })
+        onDecrease={async () => dispatch({ type: "change_green", payload: { amount: -INCREMENT } })
         }
       />
       <View
@@ -75,7 +85,5 @@ const SquareReducerScreen = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({});
 
 export default SquareReducerScreen;
