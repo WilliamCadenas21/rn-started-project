@@ -2,7 +2,7 @@ import React from "react";
 import { Text, StyleSheet, View, Button } from "react-native";
 import { NavigationStackScreenProps } from "react-navigation-stack";
 
-const HomeScreen = ({ navigation } : NavigationStackScreenProps) => {
+const HomeScreen = ({ navigation }: NavigationStackScreenProps) => {
   return (
     <View>
       <Text style={styles.text}>hi there fine</Text>
@@ -59,6 +59,12 @@ const HomeScreen = ({ navigation } : NavigationStackScreenProps) => {
           navigation.navigate("Text");
         }}
         title="Go to Text demo"
+      />
+      <Button
+        onPress={() => {
+          navigation.navigate("Box");
+        }}
+        title="Go to Box demo"
       />
     </View>
   );
