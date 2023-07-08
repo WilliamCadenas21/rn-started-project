@@ -21,3 +21,25 @@ Use this to position multiple elements with a common parent.
 How a single element gest laid out inside of a parent.
 
 Use this to override Box object model + flex box.
+
+## Flex properties
+
+* alignItems: default: stretch.
+* other values: flex-start, flex-end, center.
+
+* flexDirection: default: column.
+* row, from top to bottom.
+
+* justifyContent: default: flex-start
+* space-around, space-between.
+
+## Parent prop
+
+* alignItems
+* justifyContent
+* flexDirection
+
+## Child
+
+* flex // child try to take up as much space as posible
+* alignSelf //
