@@ -24,17 +24,15 @@ const styles = StyleSheet.create({
   textStyle1:{
     borderWidth: 3,
     borderColor: 'red',
-    flex: 4
   },
   textStyle2:{
     borderWidth: 3,
     borderColor: 'red',
-    flex: 4
+    alignSelf: 'flex-start'
   },
   textStyle3:{
     borderWidth: 3,
     borderColor: 'red',
-    flex: 2
   }
   
 });

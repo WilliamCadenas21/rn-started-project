@@ -42,4 +42,4 @@ Use this to override Box object model + flex box.
 ## Child
 
 * flex // child try to take up as much space as posible
-* alignSelf //
+* alignSelf //overwrites the value of alignItems in the parent component
