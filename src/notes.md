@@ -42,4 +42,17 @@ Use this to override Box object model + flex box.
 ## Child
 
 * flex // child try to take up as much space as posible
-* alignSelf //overwrites the value of alignItems in the parent component
+* alignSelf //overwrites the value of alignItems in the parent component.
+
+### Position rule
+
+* posibilites: relative and absolutes
+* absolutes: ignores by sibling
+* obey child properties like alignItems and others of the father
+
+## extra properties
+
+* top, bottom, right and left
+* move the box and is not part of the box object model
+* so its more beyond a margin
+* its most use it with absolute
