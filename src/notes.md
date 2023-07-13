@@ -56,3 +56,20 @@ Use this to override Box object model + flex box.
 * move the box and is not part of the box object model
 * so its more beyond a margin
 * its most use it with absolute
+
+## Steps to take a decision
+
+```javascript
+
+//1. Apply box object model rules
+
+if('Is position absolute'){
+    // apply flex box rules, ignore siblings
+    // apply top, left right, bottom
+} else {
+    // apply flex box rules, ignore siblings
+    // place element inside parent
+    // apply top, left right, bottom
+}
+
+```

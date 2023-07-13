@@ -66,6 +66,12 @@ const HomeScreen = ({ navigation }: NavigationStackScreenProps) => {
         }}
         title="Go to Box demo"
       />
+      <Button
+        onPress={() => {
+          navigation.navigate("BoxExercise");
+        }}
+        title="Go to Box Exercise demo"
+      />
     </View>
   );
 };
